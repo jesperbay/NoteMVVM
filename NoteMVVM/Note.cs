@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace Note
 {
-    class NoteVM
+    class Note
     {
-        private static int count = 1;
+        public int Nr { get; set; }
         public string Emne { get; set; }
         public string Tekst { get; set; }
-        public int Nr { get; set; }
         public DateTime Dato { get; set; }
 
-        public NoteVM()
+        private static int count = 1;
+
+     
+
+        public Note(string emne, string tekst)
         {
             Nr = count++;
-            Emne = "";
-            Tekst = "";
+            Emne = emne;
+            Tekst = tekst;
             Dato = DateTime.Now;
         }
 
         public override string ToString()
         {
-            return $"{nameof(Emne)}: {Emne}, {nameof(Tekst)}: {Tekst}, {nameof(Nr)}: {Nr}, {nameof(Dato)}: {Dato}";
+            return string.Format("Nr: {0}, Emne: {1}, Tekst: {2}, Dato: {3}", Nr, Emne, Tekst, Dato);
         }
     }
 }
