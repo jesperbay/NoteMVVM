@@ -10,9 +10,8 @@ using System.Collections.ObjectModel;
 
 namespace NoteMVVM
 {
-    class NoteViewModel : INotifyPropertyChanged
+    class NoteVM : INotifyPropertyChanged
     {
-     
         public ObservableCollection<Note> Notes { get; set; }
         public string Emne { get; set; }
         public string Tekst { get; set; }
@@ -20,7 +19,7 @@ namespace NoteMVVM
         public int SelectedIndex { get; set; }
        
 
-        public NoteViewModel()
+        public NoteVM()
         {
             Notes = new ObservableCollection<Note>();
             Notes.Add(new Note("sport", "Husk svøming "));
